@@ -14,12 +14,11 @@ public abstract class Account {
     private int operationsAccountant;
     private List<String> extract = new LinkedList<>();
 
-    public Account(int accountNumber, String customerName,String cpf) {
+    public Account(int accountNumber, String customerName, String cpf) {
         super();
         this.accountNumber = accountNumber;
         this.customerName = customerName;
         this.cpf = cpf;
-
     }
 
     public void debit (double value){
@@ -33,6 +32,7 @@ public abstract class Account {
         }
         performOperation();
     }
+
     public void credit (double value){
         if (value <= 0) {
             System.out.println("Valor inválido!");
@@ -55,18 +55,18 @@ public abstract class Account {
     public void showBalance(){
         System.out.println("Saldo atual: R$ "+ this.getBalance());
     }
+
     public void performOperation(){
         this.operationsAccountant++;
         showBalance();
     }
 
     public int getOperationsAccountant(){
-        return operationsAccountant;
+        return this.operationsAccountant;
     }
 
-
     public double getBalance() {
-        return balance;
+        return this.balance;
     }
 
     public int getAccountNumber() {
@@ -75,5 +75,13 @@ public abstract class Account {
 
     public String getCustomerName() {
         return this.customerName;
+    }
+
+    public String getCpf() {
+        return this.cpf;
+    }
+
+    public boolean getActive() {
+        return this.active;
     }
 }

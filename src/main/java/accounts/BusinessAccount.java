@@ -6,7 +6,7 @@ public class BusinessAccount extends Account{
 
     Scanner input = new Scanner(System.in);
 
-    double maximumValue = 10000.00;
+    private double maximumValue = 10000.00;
     private double loanAmount;
     private char acceptLoan = 'N';
 

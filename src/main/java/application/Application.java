@@ -18,7 +18,7 @@ public class Application {
 
         char op;
         double value = 0 ;
-        int choice,numberAccount ;
+        Integer choice,numberAccount ;
         String name , cpf = null;
 
         Bank.showLogo();
@@ -39,24 +39,18 @@ public class Application {
         cpf = input.next();
 
 
-//        while (numberAccount > 10000 || numberAccount > 99999){
-//            System.out.println("Numero da conta incorreto.\nTente novamente !");
-//            System.out.println("Digite os 5 dígitos do número da sua conta :");
-//            numberAccount = input.nextInt();
-//        }
-
         while (cpf.length() != 11){
-        System.out.println("Numero dp cpf incorreto.\nTente novamente !");
-        System.out.println("Digite os 11 digitos do seu cpf: ");
-        cpf = input.next();
+            System.out.println("Numero dp cpf incorreto.\nTente novamente !");
+            System.out.println("Digite os 11 digitos do seu cpf: ");
+            cpf = input.next();
         }
 
 
         SavingsAccount savingsAccount = new SavingsAccount(numberAccount, name, cpf);
-        CheckingAccount checkingAccount = new CheckingAccount(numberAccount,name, cpf);
-        SpecialAccount specialAccount = new SpecialAccount(numberAccount, name,cpf);
-        BusinessAccount businessAccount = new BusinessAccount(numberAccount,name, cpf);
-        StudentAccount studentAccount  = new StudentAccount(numberAccount,name,cpf);
+        CheckingAccount checkingAccount = new CheckingAccount(numberAccount, name, cpf);
+        SpecialAccount specialAccount = new SpecialAccount(numberAccount, name, cpf);
+        BusinessAccount businessAccount = new BusinessAccount(numberAccount, name, cpf);
+        StudentAccount studentAccount  = new StudentAccount(numberAccount, name, cpf);
 
         List<Account> accounts = new ArrayList<>();
         accounts.add(savingsAccount);
@@ -181,7 +175,7 @@ public class Application {
                     askCheckbook = 'N';
                     System.out.println("\nTALÕES DE CHEQUE");
                     System.out.println("\nTalões pedidos: "+checkingAccount.getCheckbook()+"\nLimites de talão no mês é: "+checkingAccount.getMAXIMO_CHECKBOOK());
-                System.out.println("\nCusto R$:" +checkingAccount.getCHECKBOOK_PRICE());
+                    System.out.println("\nCusto R$:" +checkingAccount.getCHECKBOOK_PRICE());
                     System.out.println("Gostaria de comprar o talão de cheque ? (S/N)");
                     askCheckbook = input.next().toUpperCase().charAt(0);
                     checkingAccount.askCheckbook(askCheckbook);
@@ -189,6 +183,8 @@ public class Application {
 
                 // END CHECKING ACCOUNT
             }
+
+            System.out.println(specialAccount);
 
         }while (true);
 

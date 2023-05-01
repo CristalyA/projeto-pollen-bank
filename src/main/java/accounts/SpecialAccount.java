@@ -4,13 +4,8 @@ public class SpecialAccount extends Account{
 
     private double specialLimit = 1000.0;
 
-    public SpecialAccount(int numberAccount, String customerName, String cpf){
-        super(numberAccount,customerName, cpf);
-    }
-
-    public SpecialAccount(int numberAccount, String customerName , double specialLimit, String cpf){
+    public SpecialAccount(int numberAccount, String customerName, String cpf) {
         super(numberAccount, customerName, cpf);
-        this.specialLimit = specialLimit;
     }
 
     @Override

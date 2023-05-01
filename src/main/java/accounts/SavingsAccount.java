@@ -1,10 +1,11 @@
 package accounts;
 
 import java.text.DecimalFormat;
+import java.time.LocalDate;
 
 public class SavingsAccount extends Account{
 
-    private final int birthdaySavings = 12;
+    private final int birthdaySavings = LocalDate.now().getDayOfMonth();
 
     public SavingsAccount (int numberAccount, String customerName, String cpf){
         super(numberAccount,customerName, cpf);
