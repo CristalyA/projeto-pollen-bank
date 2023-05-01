@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+
+
 public class Application {
     public static void main(String[] args) {
 
@@ -24,8 +26,14 @@ public class Application {
         System.out.println("Olá pessoa seja bem vinda ! \nQual seu nome? ");
         name = input.next().toUpperCase();
 
-        System.out.println("Qual o número da sua conta ?");
+        System.out.println("Qual o número da sua conta (5 digítos) ?");
         numberAccount = input.nextInt();
+
+        while (numberAccount < 10000 || numberAccount > 99999){
+            System.out.println("Numero da conta incorreto.\nTente novamente !");
+            System.out.println("Digite os 5 dígitos do número da sua conta :");
+            numberAccount = input.nextInt();
+        }
 
         System.out.println("Qual o número do seu cpf (Somente digitos - 11 digitos) ?");
         cpf = input.next();
@@ -42,7 +50,6 @@ public class Application {
         System.out.println("Digite os 11 digitos do seu cpf: ");
         cpf = input.next();
         }
-
 
 
         SavingsAccount savingsAccount = new SavingsAccount(numberAccount, name, cpf);
@@ -188,4 +195,5 @@ public class Application {
         Bank.by();
 
     }
+
 }

@@ -15,13 +15,17 @@ public class BusinessAccount extends Account{
     }
 
     public void makeLoan(){
-        System.out.println("Você tem R$ "+ maximumValue +"liberados para emprestimo.");
+        System.out.println("Você tem R$ "+ maximumValue +" liberados para emprestimo.");
         System.out.println("Deseja utilizar (S/N) ?");
         acceptLoan = input.next().charAt(0);
 
         if (acceptLoan == 'S' || acceptLoan == 's'){
             System.out.println("Valor do emprestimo: R$");
             loanAmount = input.nextDouble();
+
+            if(loanAmount > maximumValue){
+                System.out.println("Valor indisponível!\nTenter novamente :");
+            }
 
             if(loanAmount <= maximumValue){
                 super.credit(loanAmount);

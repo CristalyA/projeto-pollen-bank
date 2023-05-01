@@ -25,9 +25,9 @@ public abstract class Account {
     public void debit (double value){
         if(value <= 0){
             System.out.println("Valor inválido!");
-        } else if(value <= balance){
-            balance -= value;
-            extract.add("Débito:\tR$ -"+ value);
+        } else if(value <= this.balance){
+            this.balance -= value;
+            this.extract.add("Débito:\tR$ -"+ value);
         } else {
             System.out.println("Saldo Insuficiente!");
         }
@@ -37,8 +37,8 @@ public abstract class Account {
         if (value <= 0) {
             System.out.println("Valor inválido!");
         } else{
-            balance += value;
-            extract.add("Crédito:\tR$ "+value);
+            this.balance += value;
+            this.extract.add("Crédito:\tR$ "+value);
         }
         performOperation();
     }
@@ -70,10 +70,10 @@ public abstract class Account {
     }
 
     public int getAccountNumber() {
-        return accountNumber;
+        return this.accountNumber;
     }
 
     public String getCustomerName() {
-        return customerName;
+        return this.customerName;
     }
 }

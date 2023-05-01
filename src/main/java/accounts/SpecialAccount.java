@@ -15,7 +15,7 @@ public class SpecialAccount extends Account{
 
     @Override
     public void debit(double value){
-        if(value <= 0){
+        if(value <= 0 ){
             System.out.println("Valor inválido!");
         } else if (value <= balance){
             System.out.println("");
@@ -35,6 +35,8 @@ public class SpecialAccount extends Account{
             }else {
                 System.out.println("Limite insuficiente!");
             }
+        } else if( getSpecialLimit() == 0 ){
+            System.out.println("Limite especial totalmente utilizado! ");
         }
         System.out.println("Limite atual é R$ "+getSpecialLimit());
         performOperation();
